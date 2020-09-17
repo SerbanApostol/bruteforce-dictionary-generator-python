@@ -1,6 +1,6 @@
-char_set = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%&*/._-=+1234567890"
-char_min = 8
-char_max = 10
+char_set = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%&*/._-=+1234567890"  # modify to fit the possible characters
+char_min = 8      #modify to select the minimal number of characters
+char_max = 10     #modify to select the maximum number of characters
 
 
 
@@ -23,7 +23,7 @@ for i in range(char_min,char_max+1):
       for j in range(i):
         word_str = word_str + word[j]
       with open("dictionary.txt", "a") as f:
-        if not word_str.isalpha() and not word_str.isnumeric():
+        if not word_str.isalpha() and not word_str.isnumeric():   #rule to choose words to have both letters and digits, modify to further fine tune the selection of words
           f.write(word_str + "\n")
       for_index[which_for] = for_index[which_for] + 1
       while for_index[which_for] == char_len:
